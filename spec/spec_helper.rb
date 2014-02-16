@@ -39,4 +39,15 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+  ##########################################
+  #error with running with command:
+  #bundle exec rspec spec/
+  #NoMethodError:
+  #     undefined method `visit' for #<RSpec::Core::ExampleGroup::Nested_1::Nested_1:0x000001033518b8>
+
+  #Capybara is no longer supported in
+  #request specs as of Capybara 2.0.0. The recommended way to use Capybara is
+  #with feature specs. 
+  #fix it
+  config.include Capybara::DSL
 end
